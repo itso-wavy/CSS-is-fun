@@ -1,0 +1,19 @@
+#friendsDisplayLink {
+  background-color: gold;
+  text-align: center;
+  display: block;
+  background-color: #fafafa;
+  padding: 15px;
+  margin: -15px 0 15px 0;
+}
+
+#friendsDisplayLink i {
+  color: #d5d5d5;
+  margin: 0 10px;
+}
+
+.friends-screen {
+  padding: 0 var(--horizontal-space);
+}
+
+/* .friends-screen__channel {} */

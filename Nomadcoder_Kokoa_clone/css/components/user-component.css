@@ -1,0 +1,40 @@
+.user-component {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-component__column {
+  display: flex;
+  align-items: center;
+}
+
+.user-component__avatar {
+  margin-right: 20px;
+}
+
+.user-component__avatar--xl {
+  border-radius: 35%;
+  width: 80px;
+  height: 80px;
+}
+
+.user-component__avatar--sm {
+  border-radius: 33%;
+  width: 50px;
+  height: 50px;
+}
+
+.user-component__title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.user-component__subtitle,
+.user-component__column:last-child {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.user-component__title--not-bold {
+  font-weight: 400;
+}

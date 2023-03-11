@@ -5,17 +5,51 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="cocoatalk">
+  <meta property="og:title" content="CocoaTalk">
   <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
-  <link rel="stylesheet" href="style.css">
-  <title>Cocoa_Talk</title>
+  <link rel="stylesheet" href="css/style.css">
+  <title>CocoaTalk</title>
 </head>
 
 <body>
+  <aside class="status-bar">
+    <div class="status-bar__column">
+      <span>No Service</span>
+      <i class="fa-solid fa-wifi"></i>
+    </div>
+    <div class="status-bar__column">
+      <span>18:43</span>
+    </div>
+    <div class="status-bar__column">
+      <span>11%</span>
+      <i class="fa-solid fa-battery-quarter"></i>
+      <i class="fa-sharp fa-solid fa-bolt"></i>
+    </div>
+  </aside>
 
-  <script src="app.js"></script>
+  <header class="welcome-header">
+    <h1 class="welcome-header__title">Welcome to CocoaTalk</h1>
+    <p class="welcome-header__text">if you have a Cocoa Account, log in with your email or phone number.</p>
+  </header>
+
+  <form action="./friends.html" method="get" id="loginForm">
+    <!-- form 요소에는 id 부여 -->
+    <label for="loginUser"></label>
+    <input type="text" id="loginUser" name="username" placeholder="Email or phone number">
+    <label for="loginPwd"></label>
+    <input type="password" id="loginPwd" name="password" placeholder="Password">
+    <button class="login-btn">Log In</button>
+    <a href="#">Sign Up</a>
+    <a href="#">Find Cacao Account or Password</a>
+  </form>
+
+  <aside id="noMobile" class="ir">
+    <span>Your screen is too big ㅠㅠ</span>
+  </aside>
+
+  <script src="https://kit.fontawesome.com/8c6d8c8f82.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
