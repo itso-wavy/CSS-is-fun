@@ -1,6 +1,11 @@
 :root {
   --yellow: #FAE100;
-  --horizontal-space: 25px;
-}
+  --noti: #FAE100;
+  --grey-txt: rgba(0, 0, 0, 0.4);
+  --grey: rgba(121, 121, 121, 0.3);
+  --grey2: #f0f0f0;
+  --grey3: #f9f9fa;
+  --black: #2e363e;
 
-/* 컬러, 간격, 테두리 등 */
+  --space: 25px;
+}

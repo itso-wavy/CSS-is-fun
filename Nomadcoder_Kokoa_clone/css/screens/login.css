@@ -24,12 +24,12 @@
   padding: 15px 0;
   font-size: 18px;
   margin-bottom: 25px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid var(--grey);
   transition: border-color 0.3s ease-in-out;
 }
 
 #loginForm input::placeholder {
-  color: rgba(0, 0, 0, 0.4);
+  color: var(--grey-txt);
 }
 
 #loginForm input:focus {

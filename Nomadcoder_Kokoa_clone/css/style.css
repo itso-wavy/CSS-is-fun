@@ -10,9 +10,12 @@
 /* Components */
 @import "components/status-bar.css";
 @import "components/screen-header.css";
-@import "components/user-component.css";
 @import "components/nav-bar.css";
+@import "components/user-component.css";
 @import "components/badge.css";
+/* @import "components/alt-screen-header.css";
+@import "components/icon-row.css"; */
+@import "components/no-mobile.css";
 
 /* Screens */
 @import "screens/login.css";
@@ -22,6 +25,13 @@
 @import "screens/more.css";
 @import "screens/settings.css";
 
+/* settings */
 body {
   font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+  color: #121212;
+}
+
+.main-screen {
+  padding: 0 var(--space);
 }

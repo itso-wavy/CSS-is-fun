@@ -1,27 +1,24 @@
 .screen-header {
   display: flex;
-  justify-self: space-between;
-  align-items: center;
-  padding: var(--horizontal-space) 20px;
+  justify-content: space-between;
+  padding: 24px 16px;
 }
 
 .screen-header__title {
   font-size: 32px;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .screen-header__icons {
-  text-align: end;
-  font-size: 20px;
-  margin-left: auto;
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
 
-.screen-header li {
-  display: inline-block;
-  margin-left: 15px;
-  width: 25px;
-  height: 25px;
-  text-align: center;
+.screen-header__icons li {
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
   cursor: pointer;
 }
 

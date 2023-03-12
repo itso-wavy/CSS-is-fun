@@ -1,6 +1,7 @@
 .user-component {
   display: flex;
   justify-content: space-between;
+  padding: 15px 0;
 }
 
 .user-component__column {
@@ -32,9 +33,13 @@
 
 .user-component__subtitle,
 .user-component__column:last-child {
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--grey-txt);
 }
 
 .user-component__title--not-bold {
   font-weight: 400;
+}
+
+.user-component__time {
+  font-size: 14px;
 }
