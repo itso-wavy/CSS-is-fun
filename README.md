@@ -1,3 +1,1 @@
-# Responsible_challenges
-
-Responsible web design challenges
+# Study responsive web design
