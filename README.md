@@ -1,1 +1,3 @@
-# Study responsive web design
+# css-is-fun
+
+Study responsive web design...
