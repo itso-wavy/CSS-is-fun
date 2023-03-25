@@ -3,14 +3,17 @@
 
 /* ===== valiables ===== */
 :root {
+
   /* color */
   --cream: #F3EED9;
   --brown: #824936;
   --dark: #222C2A;
   --white: #FFFFFF;
+
   /* font-family */
   --basic-font: 'Roboto', sans-serif;
   --curly-font: 'Playfair Display', serif;
+
   /* font-weight */
   --light-basic: 300;
 }
@@ -27,7 +30,7 @@ body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 1.3125rem;
-  /* 21px */
+  /* = 21px */
   line-height: 1.6;
   color: var(--dark);
 }

@@ -1,0 +1,84 @@
+/* INSTRUCTIONS
+ *
+ * 1) Colors
+  1 | #23424A 
+  2 | #38CFD9 (.intro-link)
+ *
+ * 2) Fonts
+  1 | Roboto Black(900) font-size: 48px; (.intro-title)
+  2 | Roboto Regular(400) font-size: 21px; (.intro-text)
+  3 | Roboto Bold(700) font-size: 21px; (.intro-link)
+ *
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+:root {
+  /* color */
+  --color-light: #38CFD9;
+  --color-dark: #23424A;
+  --color-white: #FFF;
+
+  /* font-weight */
+  --font-weight-bold: 700;
+  --font-weight-ex-bold: 900;
+
+  /* font-size */
+  --font-size-paragraph: 1.3125rem; /* 21px */
+  --font-size-heading: 3rem; /* 48px */
+
+  /* font-family */
+  --font-family-roboto: 'Roboto';
+}
+
+*,*::before,*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--color-white);
+  font-size: var(--font-size-paragraph);
+  font-family: var(--font-family-roboto), sans-serif;
+  line-height: 1.2;
+}
+
+.intro {
+  background-color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 5em;
+}
+
+.intro-tit {
+  font-size: var(--font-size-heading);
+  font-weight: var(--font-weight-ex-bold);
+  margin-bottom: 1em;
+}
+
+/* .intro-txt */
+
+.intro-link {
+  color: var(--color-dark);
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: var(--color-light);
+  border-radius: 3em;
+  display: inline-block;
+  line-height: 0;
+  padding: 1.2em 2em;
+  margin-top: 2em;
+}
+
+.intro-link:hover,
+.intro-link:focus {
+  opacity: .75;
+}
