@@ -1,0 +1,79 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(250, 250, 94, 0.616);
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 50em;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.card {
+  height: 25em;
+  width: 18.75em;
+  position: relative;
+  font-family: 'poppins', sans-serif;
+  animation: spin 5s infinite linear;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  font-size: 1.2em;
+  border-radius: 0.6em;
+  backface-visibility: hidden;
+}
+
+.back {
+  position: relative;
+  transform: rotateY(180deg);
+  bottom: 100%;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container h3 {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.container p {
+  color: #838094;
+  font-size: 0.8em;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+img {
+  width: 10em;
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    font-size: 20px;
+  }
+}
