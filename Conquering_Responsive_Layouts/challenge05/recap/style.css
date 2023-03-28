@@ -1,0 +1,151 @@
+/* 
+////// For this challenge ///////
+
+- All text is in the text.md file
+
+// Requirements
+1. Refer to the design specs for the
+   overall layout 
+2. The image should line up with
+   the sidebar in the section
+   below
+*/
+
+:root {
+  /* color */
+  --color-white: #FFFFFF;
+  --color-black: #3A3A3A;
+  --color-light: #38CFD9;
+  --color-teal: #136C72;
+  --color-dark: #23424A;
+  --color-violet: #87629A;
+
+  /* font-family */
+  --font-family-roboto: 'Roboto', sans-serif;
+
+  /* font-size */
+  --font-size-p: 1.3125rem; /* 21px; */
+  --font-size-h2: 2.25rem; /* 36px; */
+  --font-size-h1: 3rem; /* 48px; */
+
+  /* font-weight */
+  --font-weight-normal: 400;
+  --font-weight-bold: 900;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-p);
+  line-height: 1.2;
+  color: var(--color-white);
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1020px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-left {
+  width: 55%;
+}
+
+.col-right {
+  width: 40%;
+}
+
+.hero {
+  padding: 7em 0;
+  background-color: var(--color-dark);
+}
+
+.hero-tit {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-h1);
+}
+
+.hero-txt {
+  line-height: 1.5;
+  margin: 1.5em 0 2em;
+}
+
+.hero-link {
+  color: var(--color-dark);
+  background-color: var(--color-light);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: var(--font-weight-bold);
+  line-height: 0;
+  padding: .7em 1.8em;
+  border-radius: 60px;
+  white-space: nowrap;
+}
+
+.hero-link:hover,
+.hero-link:focus {
+  opacity: .75;
+}
+
+.hero-img {
+  height: fit-content;
+}
+
+.main {
+  margin-top: 3em;
+}
+
+.section, .sidebar {
+  padding: 3em 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.sec-tit {
+  color: var(--color-teal);
+  font-size: var(--font-size-h2);
+}
+
+.sec-txt, .sidebar-txt {
+  line-height: 1.5;
+}
+
+.sec-txt {
+  color: var(--color-dark);
+}
+
+.sidebar {
+  background-color: var(--color-teal);
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+}
+
+.sidebar-col + .sidebar-col {
+  margin-top: 2em;
+}
+
+.sidebar-tit {
+  margin-bottom: 1em;
+}
