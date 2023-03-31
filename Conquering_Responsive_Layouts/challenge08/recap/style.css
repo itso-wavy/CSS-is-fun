@@ -27,7 +27,17 @@ img {
 
 h1 {
   font-size: 3rem;
-  margin-top: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 .section-title {
@@ -54,21 +64,41 @@ h1 {
   width: 80%;
   max-width: 1100px;
   margin: 0 auto;
-  /* added for nav-toggle positioning */
   position: relative;
+}
+
+.hero {
+  padding: 100px 0;
+  background-color: #23424a;
+  color: #fff;
+}
+
+.hero__img {
+  margin-top: 2em;
+}
+
+.hero p {
+  margin-bottom: 3em;
+}
+
+.main {
+  margin-top: 3em;
+}
+
+.sidebar {
+  padding: 1em;
+  text-align: center;
+  color: #fff;
+  background-color: #136c72;
 }
 
 header {
   background: #136c72;
-  padding: 1em 0;
+  padding: 0.8em 0;
   text-align: center;
 }
 
-.nav {
-  width: 100%;
-}
-
-.nav-toggle {
+.nav__toggle {
   cursor: pointer;
   border: 0;
   width: 3em;
@@ -76,16 +106,30 @@ header {
   padding: 0em;
   border-radius: 50%;
   background: #072a2d;
-  color: white;
   transition: opacity 250ms ease;
-
   position: absolute;
   left: 0;
+  top: 0.625em;
 }
 
 .nav-toggle:focus,
 .nav-toggle:hover {
   opacity: 0.75;
+}
+
+.logo {
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  position: relative;
+}
+
+.logo__img {
+  position: absolute;
+  width: 55px;
+  height: 30px;
+  top: 0;
+  left: 0;
 }
 
 .hamburger {
@@ -116,15 +160,11 @@ header {
   transform: translateY(3px);
 }
 
-/* made changes here from video
-   to make it more accessible.
-   
-   Works the same :) */
 .nav {
   visibility: hidden;
+  width: 100%;
   height: 0;
   position: absolute;
-  font-size: 1rem;
 }
 
 .nav--visible {
@@ -133,93 +173,27 @@ header {
   position: relative;
 }
 
-.nav__list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.nav__list--primary {
-  margin-bottom: 2em;
-}
-
 .nav__item {
-  margin-top: 0.75em;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 2em 0.8em;
+}
+
+.nav__link {
+  color: #dae8e9;
+  font-weight: normal;
+  position: relative;
+  white-space: nowrap;
 }
 
 .nav__link--button {
-  padding: 0.25em 0.75em;
-  background: #fff;
-  color: #23424a;
-  border-radius: 100px;
-}
-.nav__link {
-  color: white;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.nav__link:focus,
-.nav__link:hover {
-  opacity: 0.65;
-}
-
-.logo {
-  height: 30px;
-}
-
-.hero {
-  padding: 100px 0;
-  background-color: #23424a;
-  color: #fff;
-}
-
-.hero__img {
-  margin-top: 2em;
-}
-
-.hero p {
-  margin-bottom: 3em;
-}
-
-.main {
-  margin-top: 3em;
-}
-
-.sidebar {
-  padding: 1em;
-  text-align: center;
-  color: #fff;
-  background-color: #136c72;
+  color: #136c72;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 0.5em 1em;
 }
 
 @media (min-width: 800px) {
-  .nav-toggle {
-    display: none;
-  }
-
-  .nav {
-    visibility: visible;
-    display: flex;
-    align-items: center;
-    height: auto;
-    position: relative;
-    justify-content: flex-end;
-  }
-
-  .nav__list {
-    display: flex;
-    margin: 0;
-  }
-
-  .nav__list--primary {
-    /* margin: 0 auto; */
-  }
-
-  .nav__item {
-    margin: 0 0 0 1.5em;
-  }
-
   .row {
     display: flex;
     justify-content: space-between;
@@ -241,5 +215,32 @@ header {
 
   .sidebar {
     width: 32%;
+  }
+
+  .logo {
+    margin-right: .8em;
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav {
+    visibility: visible;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .nav__list {
+    display: flex;
+  }
+
+  .nav__item {
+    margin: 0 0.8em;
+  }
+
+  .nav__link {
+    top: 1em;
   }
 }
