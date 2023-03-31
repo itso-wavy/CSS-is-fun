@@ -1,0 +1,127 @@
+/* ===== font ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Roboto:wght@300;400&display=swap');
+
+/* ===== valiables ===== */
+:root {
+  /* color */
+  --color-white: #FFFFFF;
+  --color-dark: #222C2A;
+  --color-beige: #F3EED9;
+  --color-brown: #824936;
+
+  /* font-family */
+  --font-family-roboto: 'Roboto', sans-serif;
+  --font-family-Playfair: 'Playfair Display', serif;
+
+  
+  /* font-size */
+  --font-size-small: 1.125rem; /* 18px; */
+  --font-size-p: 1.3125rem; /* 21px; */
+  --font-size-h2: 2.25rem; /* 36px; */
+  --font-size-h1: 3.75rem; /* 60px; */
+
+  /* font-weight */
+  --font-weight-light: 300;
+  --font-weight-black: 900;
+}
+
+/* ===== base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--font-family-roboto);
+  font-size: var(--font-size-p);
+  line-height: 1.6;
+  color: var(--color-white);
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1128px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  width: 48%;
+}
+
+.section {
+  padding: 5em 0;
+}
+
+.section__title {
+  font-size: var(--font-size-h2);
+  color: var(--color-beige);
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  min-height: 660px;
+  background-color: var(--color-beige);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-family-Playfair);
+  font-weight: var(--font-weight-black);
+}
+
+.intro__title {
+  font-size: var(--font-size-h1);
+}
+
+.title--dark {
+  color: var(--color-brown);
+}
+
+.intro__text {
+  text-transform: uppercase;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-light);
+  letter-spacing: .8em;
+  color: var(--color-dark);
+}
+
+.section__one {
+  color: var(--color-dark);
+}
+
+.section__one .title {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.section__two .title, 
+.section__three .title {
+  margin-bottom: 1.1em;
+
+}
+
+.section__two {
+  background-color: var(--color-dark);
+}
+
+.section__three {
+  background-color: var(--color-brown);
+}
+
+.section__three .row {
+  flex-direction: row-reverse;
+}
