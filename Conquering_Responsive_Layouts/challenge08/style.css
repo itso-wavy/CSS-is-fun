@@ -25,7 +25,17 @@ img {
 
 h1 {
     font-size: 3rem;
-    margin-top: 0;
+    margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a{
+  text-decoration: none;
 }
 
 .section-title {
@@ -52,91 +62,8 @@ h1 {
     width: 80%;
     max-width: 1100px;
     margin: 0 auto;
-    /* added for nav-toggle positioning */
     position: relative;
 }
-
-header {
-    background: #136c72;
-    padding: 1em 0;
-    text-align: center;
-}
-
-.nav {
-    width: 100%;
-}
-
-
-
-.nav-toggle {
-    cursor: pointer;
-    border: 0;
-    width: 3em;
-    height: 3em;
-    padding: 0em;
-    border-radius: 50%;
-    background: #072A2D;
-    color: white;
-    transition: opacity 250ms ease;
-    
-    position: absolute;
-    left: 0;
-}
-
-.nav-toggle:focus,
-.nav-toggle:hover {
-    opacity: .75;
-}
-
-.hamburger {
-    width: 50%;
-    position: relative;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-    display: block;
-    margin: 0 auto;
-    height: 3px;
-    background: white;
-}
-
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    width: 100%;
-}
-
-.hamburger::before {
-    transform: translateY(-6px);
-}
-
-.hamburger::after {
-    transform: translateY(3px);
-}
-
-/* made changes here from video
-   to make it more accessible.
-   
-   Works the same :) */
-.nav {
-    visibility: hidden;
-    height: 0;
-    position: absolute;
-}
-
-.nav--visible {
-    visibility: visible;
-    height: auto;
-    position: relative;
-} 
-
-
-.logo {
-    height: 30px;
-}
-
 
 .hero {
     padding: 100px 0;
@@ -157,7 +84,6 @@ header {
     margin-top: 3em;
 }
 
-
 .sidebar {
     padding: 1em;
     text-align: center;
@@ -169,22 +95,9 @@ header {
 
 
 @media (min-width: 800px) {
-
-    
-    .nav-toggle {
-        display: none;
-    }
-
-    .nav {
-        visibility: visible;
-        display: flex;
-        height: auto;
-    }
-
     .row {
         display: flex;
         justify-content: space-between;
-
     }
 
     .hero__text {
@@ -204,6 +117,4 @@ header {
     .sidebar {
         width: 32%;
     }
-    
-    
 }

@@ -1,0 +1,128 @@
+header {
+  background: #136c72;
+  padding: .8em 0;
+  text-align: center;
+}
+
+.nav__toggle {
+  cursor: pointer;
+  border: 0;
+  width: 3em;
+  height: 3em;
+  padding: 0em;
+  border-radius: 50%;
+  background: #072A2D;
+  transition: opacity 250ms ease;
+  position: absolute;
+  left: 0;
+  top: 0.625em;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+  opacity: .75;
+}
+
+.logo {
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  position: relative;
+}
+
+.logo__img {
+  position: absolute;
+  width: 55px;
+  height: 30px;
+  top: 0;
+  left: 0;
+}
+
+.hamburger {
+  width: 50%;
+  position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  margin: 0 auto;
+  height: 3px;
+  background: white;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  width: 100%;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(3px);
+}
+
+.nav {
+  visibility: hidden;
+  width: 100%;
+  height: 0;
+  position: absolute;
+}
+
+.nav--visible {
+  visibility: visible;
+  height: auto;
+  position: relative;
+} 
+
+.nav__item {
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 2em .8em;
+}
+
+.nav__link {
+  color: #dae8e9;
+  font-weight: normal;
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav__link--button {
+  color: #136c72;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: .5em 1em;
+}
+
+@media (min-width: 800px) {
+  .logo {
+    margin-right: 1em;
+  }
+
+  .nav__toggle {
+      display: none;
+  }
+
+  .nav {
+      visibility: visible;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .nav__list{
+    display: flex;
+  }
+
+  .nav__item{
+    margin: 0 .8em;
+  }
+
+  .nav__link {
+    top: 1em;
+  }
+}
