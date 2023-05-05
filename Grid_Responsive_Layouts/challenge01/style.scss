@@ -1,0 +1,78 @@
+@import '../sass/reset';
+
+// - [ ] Variables
+// - [ ] Nesting
+// - [ ] Mixins
+// - [ ] Extend
+// - [ ] Responsive Mixins
+
+body {
+  background-color: rgb(226, 253, 175);
+  color: #211F1F;
+  font-size: 20px;
+  display: grid;
+  place-items: center;
+  padding-top: 20px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #F4F5F2;
+  padding: 30px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #211F1F;
+  padding-bottom: 10px;
+  position: relative;
+  font-size: 60px;
+
+
+  h1 {
+    font-weight: bold;
+  }
+
+  i {
+    color: #c44569;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  p {
+    font-size: 25px;
+  }
+}
+
+main {
+  margin-top: 100px;
+  display: grid;
+  gap: 20px;
+  grid-template: repeat(3, 130px) / repeat(3, 130px);
+
+  .circle {
+    border-radius: 50%;
+
+    &.blue {
+      background-color: #BBE1F0;
+
+    }
+
+    &.grey {
+      background-color: #616365;
+
+    }
+
+    &.green {
+      background-color: #03A364;
+
+    }
+  }
+
+
+}
