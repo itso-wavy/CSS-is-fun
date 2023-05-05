@@ -1,0 +1,76 @@
+@import '../sass/reset';
+
+// - [ ] Variables
+// - [ ] Nesting
+// - [ ] Mixins
+// - [ ] Extend
+// - [ ] Responsive Mixins
+
+body {
+  font-weight: bolder;
+  padding: 10px;
+  height: 100vh;
+  font-size: 4rem;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template:
+    'one one two two' 2fr 'three three four five' 1fr
+    'three three six seven' 1fr / 1fr 1fr 1fr 1fr;
+
+  div {
+    display: grid;
+    place-content: center;
+  }
+
+  .one {
+    background-color: #dae7de;
+    color: #f44607;
+    grid-area: one;
+  }
+
+  .two {
+    background-color: #008a69;
+    color: #FFF;
+    grid-area: two;
+  }
+
+  .three {
+    background-color: #f44607;
+    color: #FFF;
+    grid-area: three;
+  }
+
+  .four {
+    background-color: #f7abc5;
+    color: #f97374;
+    grid-area: four;
+  }
+
+  .five {
+    background-color: #5f5fa9;
+    color: #ffc128;
+    grid-area: five;
+  }
+
+  .six {
+    background-color: #ffc128;
+    color: #5f5fa9;
+    grid-area: six;
+  }
+
+  .seven {
+    background-color: #f97374;
+    color: #dae7de;
+    grid-area: seven;
+  }
+
+  .four,
+  .five,
+  .six,
+  .seven {
+    font-size: 0.7em;
+  }
+}

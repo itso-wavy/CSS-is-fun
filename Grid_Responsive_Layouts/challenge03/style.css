@@ -1,0 +1,236 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* add custom */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  vertical-align: top;
+}
+input:focus {
+  outline: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+.clearFix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.ir {
+  position: absolute !important;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+body {
+  font-weight: bolder;
+  padding: 10px;
+  height: 100vh;
+  font-size: 4rem;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template: "one one two two" 2fr "three three four five" 1fr "three three six seven" 1fr/1fr 1fr 1fr 1fr;
+}
+.container div {
+  display: grid;
+  place-content: center;
+}
+.container .one {
+  background-color: #dae7de;
+  color: #f44607;
+  grid-area: one;
+}
+.container .two {
+  background-color: #008a69;
+  color: #FFF;
+  grid-area: two;
+}
+.container .three {
+  background-color: #f44607;
+  color: #FFF;
+  grid-area: three;
+}
+.container .four {
+  background-color: #f7abc5;
+  color: #f97374;
+  grid-area: four;
+}
+.container .five {
+  background-color: #5f5fa9;
+  color: #ffc128;
+  grid-area: five;
+}
+.container .six {
+  background-color: #ffc128;
+  color: #5f5fa9;
+  grid-area: six;
+}
+.container .seven {
+  background-color: #f97374;
+  color: #dae7de;
+  grid-area: seven;
+}
+.container .four,
+.container .five,
+.container .six,
+.container .seven {
+  font-size: 0.7em;
+}
