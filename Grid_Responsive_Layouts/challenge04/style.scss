@@ -1,0 +1,71 @@
+@import '../sass/reset';
+
+/* ===== FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;500&display=swap');
+
+body {
+  font-family: 'Bitter', serif;
+}
+
+header {
+  padding: 1em;
+  font-size: 3rem;
+  line-height: 0rem;
+  text-align: center;
+  background-color: greenyellow;
+  white-space: nowrap;
+
+  @media (width < 600px) {
+    padding: .7em;
+    font-size: 2.2rem;
+    white-space: normal;
+    line-height: 2.2rem;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 5fr));
+  grid-auto-rows: 380px;
+
+  li {
+    $bgColors: #baa2f9 #FFF #77bebf #efefef #c6a488 #45626a #cdd0d6 #afa965 #fdfe54 #66e753 #c4d3c6 #6f44cc #f85c6d;
+
+    text-align: center;
+    line-height: 2rem;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+    @for $i from 1 through length($bgColors) {
+      &:nth-child(#{$i}) {
+        background-color: nth($bgColors, $i);
+      }
+    }
+
+    p {
+      text-align: center;
+      width: 90%;
+      margin: 0 auto;
+
+      &:first-child {
+        margin-top: 1.2em;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      &:last-child {
+        margin-bottom: 1.5em;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+}
