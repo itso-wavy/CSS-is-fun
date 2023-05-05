@@ -1,0 +1,237 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+blockquote::before, blockquote::after,
+q::before,
+q::after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* add custom */
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+input {
+  border: none;
+  vertical-align: top;
+}
+input:focus {
+  outline: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+.clearFix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.ir {
+  position: absolute !important;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  z-index: -1;
+}
+
+body {
+  background-color: #DDE1D4;
+  padding: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100vh;
+  display: grid;
+  gap: 20px;
+  grid-template-rows: 1fr 3fr;
+}
+
+header {
+  padding: 20px;
+  color: white;
+  background-color: black;
+  font-weight: bolder;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: flex-end;
+}
+
+main {
+  height: 100%;
+  color: black;
+  font-size: 200px;
+  font-weight: bolder;
+  align-items: flex-end;
+  display: grid;
+  gap: 20px;
+  grid-template: "main main blank" 3fr "sub sub sub" 2.5fr/1fr 2fr 1fr;
+}
+main p[class*=content] {
+  background-color: #F14011;
+  height: 100%;
+  padding: 20px;
+}
+main p[class*=content].content-main {
+  grid-area: main;
+  position: relative;
+}
+main p[class*=content].content-main span {
+  position: absolute;
+  bottom: 20px;
+}
+main p[class*=content].content-blank {
+  grid-area: blank;
+}
+main p[class*=content].content-sub {
+  grid-area: sub;
+  position: relative;
+}
+main p[class*=content].content-sub small {
+  position: absolute;
+  bottom: 20px;
+  display: block;
+  color: #DDE1D4;
+  font-size: 16px;
+}
