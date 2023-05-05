@@ -14,50 +14,49 @@ body {
     'one one two two' 2fr 'three three four five' 1fr
     'three three six seven' 1fr / 1fr 1fr 1fr 1fr;
 
+  $bgColors: #dae7de #008a69 #f44607 #f7abc5 #5f5fa9 #ffc128 #f97374;
+  $colors: #f44607 #FFF #FFF #f97374 #ffc128 #5f5fa9 #dae7de;
+
+
   div {
     display: grid;
     place-content: center;
+
+    @for $i from 1 through length($bgColors) {
+
+      // for문으로 배열을 돌린다. 1부터 bgColors의 길이만큼 i번째 아이템에
+      &:nth-child(#{$i}) {
+        background: nth($bgColors, $i);
+        color: nth($colors, $i);
+      }
+    }
   }
 
   .one {
-    background-color: #dae7de;
-    color: #f44607;
     grid-area: one;
   }
 
   .two {
-    background-color: #008a69;
-    color: #FFF;
     grid-area: two;
   }
 
   .three {
-    background-color: #f44607;
-    color: #FFF;
     grid-area: three;
   }
 
   .four {
-    background-color: #f7abc5;
-    color: #f97374;
     grid-area: four;
   }
 
   .five {
-    background-color: #5f5fa9;
-    color: #ffc128;
     grid-area: five;
   }
 
   .six {
-    background-color: #ffc128;
-    color: #5f5fa9;
     grid-area: six;
   }
 
   .seven {
-    background-color: #f97374;
-    color: #dae7de;
     grid-area: seven;
   }
 

@@ -193,39 +193,53 @@ body {
   display: grid;
   place-content: center;
 }
-.container .one {
-  background-color: #dae7de;
+.container div:nth-child(1) {
+  background: #dae7de;
   color: #f44607;
+}
+.container div:nth-child(2) {
+  background: #008a69;
+  color: #FFF;
+}
+.container div:nth-child(3) {
+  background: #f44607;
+  color: #FFF;
+}
+.container div:nth-child(4) {
+  background: #f7abc5;
+  color: #f97374;
+}
+.container div:nth-child(5) {
+  background: #5f5fa9;
+  color: #ffc128;
+}
+.container div:nth-child(6) {
+  background: #ffc128;
+  color: #5f5fa9;
+}
+.container div:nth-child(7) {
+  background: #f97374;
+  color: #dae7de;
+}
+.container .one {
   grid-area: one;
 }
 .container .two {
-  background-color: #008a69;
-  color: #FFF;
   grid-area: two;
 }
 .container .three {
-  background-color: #f44607;
-  color: #FFF;
   grid-area: three;
 }
 .container .four {
-  background-color: #f7abc5;
-  color: #f97374;
   grid-area: four;
 }
 .container .five {
-  background-color: #5f5fa9;
-  color: #ffc128;
   grid-area: five;
 }
 .container .six {
-  background-color: #ffc128;
-  color: #5f5fa9;
   grid-area: six;
 }
 .container .seven {
-  background-color: #f97374;
-  color: #dae7de;
   grid-area: seven;
 }
 .container .four,
