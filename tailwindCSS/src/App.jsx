@@ -1,4 +1,4 @@
-import logoImg from './assets/logo.svg';
+import logoImg from './assets/logo-brand.svg';
 import bgImg from './assets/beach-work.jpg';
 import popularDestinations from './data/popularDestinations';
 import DestinationCard from './components/DestinationCard';
@@ -15,10 +15,10 @@ export default function App() {
               src={bgImg}
               alt='Woman workcationing on the beach'
             />
-            <h1 className='mt-6 text-2xl font-bold text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl'>
+            <h1 className='mt-6 text-2xl font-headline tracking-tight font-bold text-gray-900 sm:mt-8 sm:text-4xl lg:text-3xl xl:text-4xl'>
               You can work from anywhere.
-              <br className='hidden lg:inline' />{' '}
-              <span className='text-indigo-500'>Take advantage of it.</span>
+              <br className='hidden sm:inline' />
+              <span className='text-brand'>Take advantage of it.</span>
             </h1>
             <p className='mt-2 text-gray-600 sm:mt-4 sm:text-xl'>
               Workcation helps you find work-friendly rentals in beautiful
@@ -27,7 +27,7 @@ export default function App() {
             </p>
             <div className='mt-4 space-x-1 sm:mt-6'>
               <a
-                className='inline-block px-5 py-3 rounded-lg transform transition bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 focus:ring-indigo-500 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-indigo-600 uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base'
+                className='inline-block px-5 py-3 rounded-lg transform transition bg-brand hover:bg-brand-light hover:-translate-y-0.5 focus:ring-brand focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-brand-dark uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base'
                 href='/'
               >
                 Book your escape
