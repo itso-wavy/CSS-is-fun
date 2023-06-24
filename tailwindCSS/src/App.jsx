@@ -27,7 +27,7 @@ const App = () => {
             <div className='mt-4 sm:mt-6'>
               <a
                 href='/'
-                className='iinline-block px-5 py-3 rounded-lg bg-indigo-500 uppercase tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base'
+                className='inline-block px-5 py-3 rounded-lg transform transition  bg-indigo-500 hover:bg-indigo-400 hover:-translate-y-0.5 focus:ring-indigo-500 focus:ring-opacity-50 focus:outline-none focus:ring focus:ring-offset-2 active:bg-indigo-600 uppercase  tracking-wider font-semibold text-sm text-white shadow-lg sm:text-base'
               >
                 Book your escape
               </a>

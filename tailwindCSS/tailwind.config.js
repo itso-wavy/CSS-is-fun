@@ -4,5 +4,10 @@ export default {
   theme: {
     extend: {},
   },
+  variants: {
+    extend: {
+      backgroundColor: ['active'],
+    },
+  },
   plugins: [],
 };
