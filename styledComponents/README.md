@@ -1,4 +1,4 @@
-# TailwindCSS
+# styledComponents
 
 - 시작하기: https://styled-components.com/docs/basics
 

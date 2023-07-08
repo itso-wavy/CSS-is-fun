@@ -13,7 +13,7 @@ const Button = styled.button`
   background: ${props => props.theme.bg};
 `;
 
-// We are passing a default theme for Buttons that arent wrapped in the ThemeProvider
+// defaultProps
 Button.defaultProps = {
   theme: {
     fg: '#BF4F74',

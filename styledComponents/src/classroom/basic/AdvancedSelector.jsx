@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle, css } from 'styled-components';
 
-// 1) &
+// 1) &: 부모 컴포넌트의 클래스 이름을 참조
 const Thing = styled.div`
   color: #39e7ad;
   font-size: 1.1em;
@@ -12,11 +12,12 @@ const Thing = styled.div`
     background-color: #eaff9f;
   }
   .something-else & {
+    /* 상위 선택자 */
     border: 3px solid #ffe031;
   }
 `;
 
-// 2) &&
+// 2) &&: 두 개 이상의 클래스를 조합할 때 사용
 const Label = styled.label`
   align-items: center;
   display: flex;
@@ -55,7 +56,7 @@ const Thing2 = styled.div`
 `;
 
 const GlobalStyle = createGlobalStyle`
-   div${Thing2} { // div인 Thing2
+   div${Thing2} { // div인 Thing2, 이렇게 쓰는 사례가 있을까?!
      color: red;
    }
  `;

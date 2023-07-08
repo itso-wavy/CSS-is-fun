@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // 1) props 유무에 따라 폰트 컬러 변경
-// standard prop이 아니면 dom으로 전달되지 않음
+// 참고: standard prop(표준 속성)이 아니면 dom으로 전달되지 않음
 const Input = styled.input`
   padding: 0.5em;
   margin: 0.5em;
@@ -11,11 +11,11 @@ const Input = styled.input`
   border-radius: 3px;
 `;
 
-// 2) attrs 조작
+// 2) attrs 메서드로 props 조작
 const Input2 = styled.input.attrs(props => ({
-  // attrs: 콜백함수를 취하는 메서드, 객체를 반환
+  // attrs: 콜백 함수를 취하는 메서드, props를 받고 객체를 반환함
   type: 'text', // static props
-  $size: props.$size || '1em', // dynamic ones
+  $size: props.$size || '1em', // dynamic props
 }))`
   border: 2px solid #bf4f74;
   /* here we use the dynamically computed prop */
@@ -23,7 +23,7 @@ const Input2 = styled.input.attrs(props => ({
 `;
 
 // 3) attrs 오버라이딩
-// Input's attrs will be applied first, and then this attrs obj
+// Input's attrs will be applied first, and then overriding with this attrs obj
 const NewInput = styled(Input2).attrs({
   type: 'password',
 })`
