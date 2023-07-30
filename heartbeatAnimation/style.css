@@ -1,0 +1,47 @@
+#blue-heart path {
+  fill: #6F8CFF;
+  stroke: #6F8CFF;
+  aspect-ratio: 1;
+  animation: heartbeat 1s infinite linear;
+  animation-timing-function: steps(10);
+}
+#pink-heart path {
+  fill: #ff6fab;
+  stroke: #ff6fab;
+  animation: double-heartbeat 1s infinite linear;
+}
+#heart3D {
+  animation: double-heartbeat 1s infinite linear;
+}
+
+@keyframes heartbeat {
+  0% {
+    scale: 1.1;
+  }
+  85% {
+    scale: 1;
+  }
+}
+@keyframes double-heartbeat {
+  0% {
+    scale: 1.1;
+  }
+  35% {
+    scale: 1;
+  animation-timing-function: step-end;
+  }
+  40% {
+    scale: 1.15;
+  }
+  85% {
+    scale: 1;
+  }
+} 
+
+.heart {
+  width: 200px;
+  height: 200px;
+}
+svg.heart {
+  transform: translateY(18%);
+}
