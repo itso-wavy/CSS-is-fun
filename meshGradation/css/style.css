@@ -1,0 +1,58 @@
+.container {
+  position: relative;
+}
+
+.box {
+  height: 500px;
+  width: 500px;
+  margin: auto;
+  overflow: hidden;
+  background-color: black;
+  position: relative;
+  border-radius: 10px;
+}
+
+.box div {
+  position: absolute;
+  border-radius: 50%;
+  animation: gradation 4s infinite;
+  filter: blur(64px);
+}
+
+@keyframes gradation {
+  70% {
+    transform: scale(1.1) translate(50px);
+  }
+}
+
+.box div:nth-child(1) {
+  height: 140%;
+  width: 80%;
+  background-color: #ff057c;
+  top: -10%;
+  left: -23%;
+}
+.box div:nth-child(2) {
+  height: 80%;
+  width: 110%;
+  background-color: #800f86;
+  top: -22%;
+  right: -32%;
+  animation-delay: 8s;
+}
+.box div:nth-child(3) {
+  height: 65%;
+  width: 80%;
+  background-color: #1619b9;
+  bottom: -5%;
+  right: -20%;
+  animation-delay: 0.3s;
+}
+.box div:nth-child(4) {
+  height: 50%;
+  width: 75%;
+  background-color: #1ba8e9;
+  bottom: -15%;
+  right: 8%;
+  animation-delay: 1.2s;
+}
