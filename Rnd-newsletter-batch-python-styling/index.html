@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily News Summary</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        list-style: none;
+        text-decoration: none;
+        color: #030712;
+      }
+
+      body {
+        font-family: 'SUIT Variable', sans-serif;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      div.container {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 80px 56px;
+        box-shadow: 0 4px 4px rgb(0 0 0 / 0.15);
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          order: 1;
+          margin-left: auto;
+          width: 160px;
+          height: 39.33px;
+        }
+
+        h1 {
+          order: 2;
+        }
+      }
+
+      h1 {
+        position: relative;
+        margin: 24px 0 30px;
+        width: fit-content;
+
+        font-size: 28px;
+        line-height: calc(2.5 / 2.25);
+        letter-spacing: 0.05em;
+        font-weight: 700;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          background: #11b3d380;
+          height: 100%;
+          width: 100%;
+          transform: rotate(2deg);
+          z-index: -5;
+        }
+      }
+
+      .article {
+        padding: 16px 0;
+
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+      }
+
+      .heading {
+        margin-bottom: 8px;
+        font-size: 42px;
+        line-height: 1;
+        letter-spacing: -0.025em;
+        font-weight: 900;
+      }
+
+      ul {
+        padding: 12px 0;
+      }
+
+      li {
+        margin: 12px 0;
+        padding: 12px;
+        border-radius: 8px;
+
+        &:not(:last-child):after {
+          content: '';
+          display: block;
+          position: relative;
+          top: 18px;
+          width: 100%;
+          height: 1px;
+          background: #ddd;
+        }
+
+        &:hover {
+          transition: color 0.1s ease-out 0.1s;
+
+          background: #fafafa;
+
+          box-shadow: inset 0 0px 10px rgb(0 0 0 / 0.015);
+
+          p.title {
+            color: #11b3d3;
+          }
+        }
+      }
+
+      p.title {
+        font-size: 19px;
+        font-weight: 700;
+        margin: 4px 0;
+        letter-spacing: -0.025em;
+      }
+      p.published {
+        font-size: 14px;
+        font-weight: 600;
+        color: #9f9fa9;
+      }
+      p.summary {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.65;
+        color: #4a5565;
+      }
+    </style>
+    <!-- ✌️
+       <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        list-style: none;
+        text-decoration: none;
+        color: #030712;
+      }
+
+      body {
+        font-family: 'SUIT Variable', sans-serif;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      div.container {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 80px 56px;
+        box-shadow: 0 4px 4px rgb(0 0 0 / 0.15);
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          order: 1;
+          margin-left: auto;
+          width: 160px;
+          height: 39.33px;
+        }
+
+        h1 {
+          order: 2;
+        }
+      }
+
+      h1 {
+        position: relative;
+        margin: 24px 0 36px;
+        width: fit-content;
+
+        font-size: 36px;
+        line-height: calc(2.5 / 2.25);
+        letter-spacing: 0.05em;
+        font-weight: 700;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          background: #11b3d380;
+          height: 100%;
+          width: 100%;
+          transform: rotate(2deg);
+          z-index: -5;
+        }
+      }
+
+      .article {
+        padding: 16px 0;
+
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+      }
+
+      .heading {
+        margin-bottom: 24px;
+        font-size: 52px;
+        line-height: 1;
+        letter-spacing: -0.025em;
+        font-weight: 900;
+      }
+
+      ul {
+        padding: 12px 0;
+      }
+
+      li {
+        /* padding: 12px 0; */
+        /* margin-bottom: 8px; */
+        /* margin: 8px 0; */
+        margin: 12px 0;
+        padding: 12px;
+        border-radius: 8px;
+        /* 
+        &:not(:last-child) {
+          border-bottom: 1px solid #ddd;
+        } */
+
+        &:not(:last-child):after {
+          content: '';
+          display: block;
+          position: relative;
+          top: 18px;
+          width: 100%;
+          height: 1px;
+          background: #ddd;
+        }
+
+        &:hover {
+          transition: color 0.1s ease-out 0.1s;
+
+          background: #fafafa;
+
+          box-shadow: inset 0 0px 10px rgb(0 0 0 / 0.015);
+
+          p.title {
+            /* color: #d86a16; */
+            /* color: #11b3d3da; */
+            color: #11b3d3;
+          }
+        }
+      }
+
+      p.title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 4px 0;
+        letter-spacing: -0.025em;
+      }
+      p.published {
+        font-size: 14px;
+        font-weight: 600;
+        color: #9f9fa9;
+      }
+      p.summary {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.65;
+        color: #4a5565;
+      }
+    </style> -->
+
+    <!-- 👍    
+     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        list-style: none;
+        text-decoration: none;
+        color: #030712;
+      }
+
+      body {
+        font-family: 'SUIT Variable', sans-serif;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      div.container {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 80px 56px;
+        box-shadow: 0 4px 4px rgb(0 0 0 / 0.15);
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          order: 1;
+          margin-left: auto;
+          width: 160px;
+          height: 39.33px;
+        }
+
+        h1 {
+          order: 2;
+        }
+      }
+
+      h1 {
+        position: relative;
+        margin: 24px 0 36px;
+        width: fit-content;
+
+        font-size: 36px;
+        line-height: calc(2.5 / 2.25);
+        letter-spacing: 0.05em;
+        font-weight: 700;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          top: 10px;
+          left: 0;
+          background: #11b3d380;
+          height: 100%;
+          width: 100%;
+          transform: rotate(2deg);
+          z-index: -5;
+        }
+      }
+
+      .article {
+        padding: 16px 0;
+
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+      }
+
+      .heading {
+        margin-bottom: 24px;
+        font-size: 52px;
+        line-height: 1;
+        letter-spacing: -0.025em;
+        font-weight: 900;
+      }
+
+      ul {
+        padding: 12px 0;
+      }
+
+      li {
+        padding: 12px 0;
+        margin-bottom: 8px;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #ddd;
+        }
+
+        &:hover {
+          p.title {
+            /* color: #00d3f3; */
+            color: #d86a16;
+            transition: color 0.1s ease-out 0.1s;
+          }
+        }
+      }
+
+      p.title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 4px 0;
+        letter-spacing: -0.025em;
+      }
+      p.published {
+        font-size: 14px;
+        font-weight: 600;
+        color: #9f9fa9;
+      }
+      p.summary {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.65;
+        color: #4a5565;
+      }
+    </style> -->
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Daily News Summary</h1>
+        <img
+          src="./turingbio-logo.png"
+          alt="turingbio.inc"
+          width="160"
+          height="39.33"
+        />
+      </header>
+
+      <article class="article">
+        <h2 class="heading">Top 10 Korean News</h2>
+        <ul>
+          <!-- {% for article in news %} -->
+          <li>
+            <a href="{{ article.link }}">
+              <p class="published">2025-02-25 14:00:00</p>
+              <p class="title">
+                엑셀세라퓨틱스, 중간엽줄기세포 화학조성배지 국내 최초 美 FDA
+                등록 外
+              </p>
+              <p class="summary">
+                ◇ 세포유전자치료제 배양 배지 전문기업 '엑셀세라퓨틱스(373110)'가
+                중간엽줄기세포 배양 배지인... 매출성장의 주 요인으로는
+                엔비디아(NVIDIA)와의 협업으로 진행중인 Omniverse 활용 반도체
+                디지털트윈 사업이...
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="{{ article.link }}">
+              <p class="published">2025-02-25 14:00:00</p>
+              <p class="title">
+                엑셀세라퓨틱스, 중간엽줄기세포 화학조성배지 국내 최초 美 FDA
+                등록 外
+              </p>
+              <p class="summary">
+                ◇ 세포유전자치료제 배양 배지 전문기업 '엑셀세라퓨틱스(373110)'가
+                중간엽줄기세포 배양 배지인... 매출성장의 주 요인으로는
+                엔비디아(NVIDIA)와의 협업으로 진행중인 Omniverse 활용 반도체
+                디지털트윈 사업이...
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="{{ article.link }}">
+              <p class="published">2025-02-25 14:00:00</p>
+              <p class="title">
+                엑셀세라퓨틱스, 중간엽줄기세포 화학조성배지 국내 최초 美 FDA
+                등록 外
+              </p>
+              <p class="summary">
+                ◇ 세포유전자치료제 배양 배지 전문기업 '엑셀세라퓨틱스(373110)'가
+                중간엽줄기세포 배양 배지인... 매출성장의 주 요인으로는
+                엔비디아(NVIDIA)와의 협업으로 진행중인 Omniverse 활용 반도체
+                디지털트윈 사업이...
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="{{ article.link }}">
+              <p class="published">2025-02-25 14:00:00</p>
+              <p class="title">
+                엑셀세라퓨틱스, 중간엽줄기세포 화학조성배지 국내 최초 美 FDA
+                등록 外
+              </p>
+              <p class="summary">
+                ◇ 세포유전자치료제 배양 배지 전문기업 '엑셀세라퓨틱스(373110)'가
+                중간엽줄기세포 배양 배지인... 매출성장의 주 요인으로는
+                엔비디아(NVIDIA)와의 협업으로 진행중인 Omniverse 활용 반도체
+                디지털트윈 사업이...
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="{{ article.link }}">
+              <p class="published">2025-02-25 14:00:00</p>
+              <p class="title">
+                엑셀세라퓨틱스, 중간엽줄기세포 화학조성배지 국내 최초 美 FDA
+                등록 外
+              </p>
+              <p class="summary">
+                ◇ 세포유전자치료제 배양 배지 전문기업 '엑셀세라퓨틱스(373110)'가
+                중간엽줄기세포 배양 배지인... 매출성장의 주 요인으로는
+                엔비디아(NVIDIA)와의 협업으로 진행중인 Omniverse 활용 반도체
+                디지털트윈 사업이...
+              </p>
+            </a>
+          </li>
+          <li>
+            <a href="{{ article.link }}">
+              <p class="published">2025-02-25 14:00:00</p>
+              <p class="title">
+                엑셀세라퓨틱스, 중간엽줄기세포 화학조성배지 국내 최초 美 FDA
+                등록 外
+              </p>
+              <p class="summary">
+                ◇ 세포유전자치료제 배양 배지 전문기업 '엑셀세라퓨틱스(373110)'가
+                중간엽줄기세포 배양 배지인... 매출성장의 주 요인으로는
+                엔비디아(NVIDIA)와의 협업으로 진행중인 Omniverse 활용 반도체
+                디지털트윈 사업이...
+              </p>
+            </a>
+          </li>
+          <!-- {% endfor %} -->
+        </ul>
+      </article>
+
+      <article class="article">
+        <h2 class="heading">Top 10 English News</h2>
+        <img src="data:image/png;base64,{{ daily_chart }}" alt="Top 10 Words" />
+        {% if trend_chart %}
+      </article>
+
+      <article class="article">
+        <h2 class="heading">Word Trend Over 10 Weeks</h2>
+        <img
+          src="data:image/png;base64,{{ trend_chart }}"
+          alt="Word Trend Over 10 Weeks"
+        />
+        {% endif %}
+      </article>
+    </div>
+  </body>
+</html>
